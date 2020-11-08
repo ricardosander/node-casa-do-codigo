@@ -24,6 +24,7 @@ Projeto desenvolvido durante as formações [Fundamentos Nodejs da Alura](https:
 - Sobreescrevendo método HTTP com o móduço method-override
 - Inclusão de arquivos CSS para uma apresentação mais agradável
 - Tratamento de erros 404 e 500
+- Validações de dados com Express Validator
 
 ### Instalando e usando o nodemon
 
