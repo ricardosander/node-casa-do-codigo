@@ -1,7 +1,12 @@
-const http = require('http');
+const express = require('express');
+const app = express();
+const port = 3000;
 
-const server = http.createServer(function(request, response) {
-    
+app.listen(port, function() {
+    console.log(`Servidor rodando na porta ${port}`);
+});
+
+app.get('/', (request, response) => {
     console.log(`Recieving request ${request.method} - ${request.url}`);
     
     response.end(`
@@ -15,6 +20,16 @@ const server = http.createServer(function(request, response) {
         </html>`);
 });
 
-const port = 3000;
-server.listen(port);
-console.log(`Server listening port ${port}`);
+app.get('/livros', (request, response) => {
+    console.log(`Recieving request ${request.method} - ${request.url}`);
+    
+    response.end(`
+        <html>
+            <head>
+                <meta charset="utf-8">
+            </head>
+            <body>
+                <h1>Listagem de Livros</h1>
+            </body>
+        </html>`);
+});
