@@ -1,7 +1,9 @@
 const http = require('http');
 
 const server = http.createServer(function(request, response) {
-    console.log('Recieving request');
+    
+    console.log(`Recieving request ${request.method} - ${request.url}`);
+    
     response.end(`
         <html>
             <head>
