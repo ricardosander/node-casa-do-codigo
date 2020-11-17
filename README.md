@@ -11,6 +11,8 @@ Projeto desenvolvido durante a formação [Fundamentos Nodejs da Alura](https://
 - Exportação de informações e funcionalidades de módulos Node
 - Nodemon para produtividade dev
 - Templates dinâmicos com MarkoJS
+- SQLite em uma aplicação Node
+- Padrão DAO com Promises
 
 ### Instalando e usando o nodemon
 
