@@ -6,6 +6,11 @@ Projeto desenvolvido durante a formação [Fundamentos Nodejs da Alura](https://
 - Plataforma Node
 - Módulo HTTP do Node
 - Gerenciador de Pacotes do Node (Node Package Manager) - npm
+- Framework Express
+- Rotas com Express
+- Exportação de informações e funcionalidades de módulos Node
+- Nodemon para produtividade dev
+- Templates dinâmicos com MarkoJS
 
 ### Instalando e usando o nodemon
 
