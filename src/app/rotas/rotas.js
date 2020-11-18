@@ -41,4 +41,21 @@ module.exports = (app) => {
             .then(response.redirect('/livros'))
             .catch(erro => console.log(erro));
     });
+
+    app.get('/livros/:id', (request, response, next) => {
+
+        const livroId = request.params.id;
+
+        console.log(livroId);
+
+        const livroDao = new LivroDao(db);
+        livroDao.buscaPorId(livroId)
+            .then(livro => {
+                if (!livro) {
+                    return response.send('Livro não encontrado.');
+                }
+                response.send(livro);
+            })
+            .catch(erro => response.send(erro))
+    });
 }
