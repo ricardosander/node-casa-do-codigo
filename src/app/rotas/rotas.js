@@ -28,4 +28,17 @@ module.exports = (app) => {
                 })
                 .catch(erro => console.log(erro));
     });
+
+    app.get('/livros/form', (request, response) => {
+        response.marko(require('../views/livros/form/form.marko'));
+    });
+
+    app.post('/livros', (request, response) => {
+        console.log(request.body);
+
+        const livroDao = new LivroDao(db);
+        livroDao.adiciona(request.body)
+            .then(response.redirect('/livros'))
+            .catch(erro => console.log(erro));
+    });
 }
