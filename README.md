@@ -13,6 +13,10 @@ Projeto desenvolvido durante a formação [Fundamentos Nodejs da Alura](https://
 - Templates dinâmicos com MarkoJS
 - SQLite em uma aplicação Node
 - Padrão DAO com Promises
+- Configuração de rotas POST com Express
+- Middlewares
+- Módulo body-parser para capturar dados de requisições POST
+- Criação de middleware com módulo body-parser.
 
 ### Instalando e usando o nodemon
 
