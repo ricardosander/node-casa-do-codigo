@@ -1,6 +1,6 @@
 # node-casa-do-codigo
 
-Projeto desenvolvido durante a formação [Fundamentos Nodejs da Alura](https://cursos.alura.com.br/course/nodejs-fundamentos).
+Projeto desenvolvido durante as formações [Fundamentos Nodejs da Alura](https://cursos.alura.com.br/course/nodejs-fundamentos) e [Nodejs: MVC, autenticação e autorização](https://cursos.alura.com.br/course/node-mvc-autenticacao-autorizacao).
 
 ## Conhecimentos adquiridos
 - Plataforma Node
@@ -22,6 +22,8 @@ Projeto desenvolvido durante a formação [Fundamentos Nodejs da Alura](https://
 - Usando Ajax em aplicações Node
 - Utilizando arquivos estáticos com middlewares
 - Sobreescrevendo método HTTP com o móduço method-override
+- Inclusão de arquivos CSS para uma apresentação mais agradável
+- Tratamento de erros 404 e 500
 
 ### Instalando e usando o nodemon
 
