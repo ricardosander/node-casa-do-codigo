@@ -30,7 +30,7 @@ module.exports = (app) => {
     });
 
     app.get('/livros/form', (request, response) => {
-        response.marko(require('../views/livros/form/form.marko'));
+        response.marko(require('../views/livros/form/form.marko'), { livro: {} });
     });
 
     app.post('/livros', (request, response) => {
@@ -42,20 +42,37 @@ module.exports = (app) => {
             .catch(erro => console.log(erro));
     });
 
-    app.get('/livros/:id', (request, response, next) => {
+    app.put('/livros', (request, response) => {
+        console.log(request.body);
+
+        const livroDao = new LivroDao(db);
+        livroDao.atualiza(request.body)
+            .then(response.redirect('/livros'))
+            .catch(erro => console.log(erro));
+    });
+
+    app.get('/livros/form/:id', (request, response, next) => {
 
         const livroId = request.params.id;
-
-        console.log(livroId);
 
         const livroDao = new LivroDao(db);
         livroDao.buscaPorId(livroId)
             .then(livro => {
-                if (!livro) {
-                    return response.send('Livro não encontrado.');
-                }
-                response.send(livro);
+                response.marko(
+                    require('../views/livros/form/form.marko'),
+                    { livro }
+                );
             })
             .catch(erro => response.send(erro))
+    });
+
+    app.delete('/livros/:id', (request, response) => {
+        
+        const id = request.params.id;
+
+        const livroDao = new LivroDao(db);
+        livroDao.remove(id)
+            .then(() => response.status(200).end())
+            .catch(erro => response.send(erro));
     });
 }

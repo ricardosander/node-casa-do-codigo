@@ -16,7 +16,12 @@ Projeto desenvolvido durante a formação [Fundamentos Nodejs da Alura](https://
 - Configuração de rotas POST com Express
 - Middlewares
 - Módulo body-parser para capturar dados de requisições POST
-- Criação de middleware com módulo body-parser.
+- Criação de middleware com módulo body-parser
+- Criando rota para verbo DELETE e PUT com Express
+- Usando path variables nas rotas
+- Usando Ajax em aplicações Node
+- Utilizando arquivos estáticos com middlewares
+- Sobreescrevendo método HTTP com o móduço method-override
 
 ### Instalando e usando o nodemon
 

@@ -84,12 +84,12 @@ class LivroDao {
         });
     }
 
-    remove(livro) {
+    remove(id) {
         return new Promise((resolve, reject) => {
             this._db.run(
                 `DELETE FROM livros WHERE id = ?`,
                 [
-                    livro.id
+                    id
                 ],
                 erro => {
                     if (erro) {
