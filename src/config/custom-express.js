@@ -12,6 +12,7 @@ app.use('/static', express.static('src/app/public'));
 app.use(bodyParser.urlencoded({
     extended: true // Habilita receber objetos complexos, no formato JSON. 
 }));
+
 app.use(methodOverride((req, res) => {
     if (req.body && typeof req.body === 'object' && '_method' in req.body) {
         // look in urlencoded POST bodies and delete it
@@ -23,5 +24,17 @@ app.use(methodOverride((req, res) => {
 
 const rotas = require('../app/rotas/rotas');
 rotas(app);
+
+app.use((request, response, next) => {
+    response.status(404).marko(
+        require('../app/views/base/erros/404.marko')
+    );
+});
+
+app.use((erro, request, response, next) => {
+    response.status(500).marko(
+        require('../app/views/base/erros/500.marko')
+    );
+});
 
 module.exports = app;
