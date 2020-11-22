@@ -1,5 +1,11 @@
 class BaseController {
 
+    static rotas() {
+        return {
+            home: '/'
+        };
+    }
+
     home() {
         return (request, response) => {
             response.marko(

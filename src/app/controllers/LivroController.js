@@ -5,6 +5,15 @@ const LivroDao = require('../infra/livros-dao');
 
 class LivroController {
 
+    static rotas() {
+        return {
+            list: '/livros',
+            register: '/livros/form',
+            update: '/livros/form/:id',
+            delete: '/livros/:id'
+        }
+    }
+
     list() {
         return (request, response) => {
  
@@ -59,7 +68,7 @@ class LivroController {
     
             const livroDao = new LivroDao(db);
             livroDao.adiciona(request.body)
-                .then(response.redirect('/livros'))
+                .then(response.redirect(LivroController.rotas().list))
                 .catch(erro => console.log(erro));
         }
     }
@@ -70,7 +79,7 @@ class LivroController {
     
             const livroDao = new LivroDao(db);
             livroDao.atualiza(request.body)
-                .then(response.redirect('/livros'))
+                .then(response.redirect(LivroController.rotas().list))
                 .catch(erro => console.log(erro));
         };
     }

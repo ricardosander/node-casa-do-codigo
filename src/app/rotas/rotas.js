@@ -12,15 +12,18 @@ const livroController = new LivroController();
 const { request } = require('express');
 
 module.exports = (app) => {
-    
-    app.get('/', baseController.home());
-    
-    app.get('/livros', livroController.list());
 
-    app.get('/livros/form', livroController.form());
+    rotasLivro = LivroController.rotas();
+    rotasBase = BaseController.rotas();
+    
+    app.get(rotasBase.home, baseController.home());
+    
+    app.get(rotasLivro.list, livroController.list());
+
+    app.get(rotasLivro.register, livroController.form());
 
     app.post(
-        '/livros', 
+        rotasLivro.list, 
         [
             check('titulo').isLength({ min : 5}).withMessage('O título deve conter ao menos 5 caracteres.'),
             check('preco').isCurrency().withMessage('O preço deve ser um valor monerátio válido.')
@@ -28,9 +31,9 @@ module.exports = (app) => {
         livroController.create()
     );
 
-    app.put('/livros', livroController.update());
+    app.put(rotasLivro.list, livroController.update());
 
-    app.get('/livros/form/:id', livroController.getById());
+    app.get(rotasLivro.update, livroController.getById());
 
-    app.delete('/livros/:id', livroController.delete());
+    app.delete(rotasLivro.delete, livroController.delete());
 }
