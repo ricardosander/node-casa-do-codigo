@@ -23,7 +23,7 @@ module.exports = (app) => {
     app.get(rotasLivro.register, livroController.form());
 
     app.post(
-        rotasLivro.list, 
+        rotasLivro.register, 
         [
             check('titulo').isLength({ min : 5}).withMessage('O título deve conter ao menos 5 caracteres.'),
             check('preco').isCurrency().withMessage('O preço deve ser um valor monerátio válido.')
@@ -31,7 +31,7 @@ module.exports = (app) => {
         livroController.create()
     );
 
-    app.put(rotasLivro.list, livroController.update());
+    app.put(rotasLivro.register, livroController.update());
 
     app.get(rotasLivro.update, livroController.getById());
 
