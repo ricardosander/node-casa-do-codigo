@@ -1,15 +1,12 @@
-const { check } = require('express-validator/check');
-
 const BaseController = require('../controllers/BaseController');
 const baseController = new BaseController();
-
-const db = require('../../config/database');
-const LivroDao = require('../infra/livros-dao');
 
 const LivroController = require('../controllers/LivroController');
 const livroController = new LivroController();
 
 const { request } = require('express');
+
+const Livro = require('../models/livro');
 
 module.exports = (app) => {
 
@@ -24,10 +21,7 @@ module.exports = (app) => {
 
     app.post(
         rotasLivro.register, 
-        [
-            check('titulo').isLength({ min : 5}).withMessage('O título deve conter ao menos 5 caracteres.'),
-            check('preco').isCurrency().withMessage('O preço deve ser um valor monerátio válido.')
-        ],
+        Livro.validations(),
         livroController.create()
     );
 
