@@ -25,6 +25,9 @@ Projeto desenvolvido durante as formações [Fundamentos Nodejs da Alura](https:
 - Inclusão de arquivos CSS para uma apresentação mais agradável
 - Tratamento de erros 404 e 500
 - Validações de dados com Express Validator
+- Arquitetura MVC
+- Centralizando rotas
+- Centralizando templates
 
 ### Instalando e usando o nodemon
 
