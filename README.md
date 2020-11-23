@@ -28,6 +28,8 @@ Projeto desenvolvido durante as formações [Fundamentos Nodejs](https://cursos.
 - Arquitetura MVC
 - Centralizando rotas
 - Centralizando templates
+- Autenticação de usuários com sessão e cookies
+- Injeção de dependências com Middlewares
 
 ### Instalando e usando o nodemon
 
