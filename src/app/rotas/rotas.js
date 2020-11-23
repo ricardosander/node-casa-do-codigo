@@ -17,15 +17,10 @@ module.exports = (app) => {
     
     app.get(rotasLivro.list, livroController.list());
 
-    app.get(rotasLivro.register, livroController.form());
-
-    app.post(
-        rotasLivro.register, 
-        Livro.validations(),
-        livroController.create()
-    );
-
-    app.put(rotasLivro.register, livroController.update());
+    app.route(rotasLivro.register)
+        .get(livroController.form())
+        .post(Livro.validations(), livroController.create())
+        .put(livroController.update());
 
     app.get(rotasLivro.update, livroController.getById());
 
