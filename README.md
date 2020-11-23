@@ -1,6 +1,6 @@
 # node-casa-do-codigo
 
-Projeto desenvolvido durante as formações [Fundamentos Nodejs da Alura](https://cursos.alura.com.br/course/nodejs-fundamentos) e [Nodejs: MVC, autenticação e autorização](https://cursos.alura.com.br/course/node-mvc-autenticacao-autorizacao).
+Projeto desenvolvido durante as formações [Fundamentos Nodejs](https://cursos.alura.com.br/course/nodejs-fundamentos) e [Nodejs: MVC, autenticação e autorização](https://cursos.alura.com.br/course/node-mvc-autenticacao-autorizacao) da Alura.
 
 ## Conhecimentos adquiridos
 - Plataforma Node
