@@ -30,6 +30,7 @@ Projeto desenvolvido durante as formações [Fundamentos Nodejs](https://cursos.
 - Centralizando templates
 - Autenticação de usuários com sessão e cookies
 - Injeção de dependências com Middlewares
+- Autorização de rotas
 
 ### Instalando e usando o nodemon
 
