@@ -1,3 +1,5 @@
+const templates = require('../views/templates');
+
 class BaseController {
 
     static rotas() {
